@@ -1,0 +1,56 @@
+<div class="row content">
+	<div class="span8 offset2">
+		<h1>Calculo do bilhão de segundos</h1>
+
+<%= form_tag("/dashboard/posted", method: "post") do %>
+ 
+
+  <div class="control-group">
+			<%= label_tag(:ano, "Ano de Nascimento") %>
+			<div class="controls">
+				<%= text_field_tag(:ano) %>
+			</div>
+		</div>
+
+		  <div class="control-group">
+			<%= label_tag(:mes, "Mes de Nascimento") %>
+			<div class="controls">
+				<%= text_field_tag(:mes) %>
+			</div>
+		</div>
+
+		  <div class="control-group">
+			<%= label_tag(:dia, "Dia de Nascimento") %>
+			<div class="controls">
+				<%= text_field_tag(:dia) %>
+			</div>
+		</div>
+
+		  <div class="control-group">
+			<%= label_tag(:hora, "Hora de Nascimento") %>
+			<div class="controls">
+				<%= text_field_tag(:hora) %>
+			</div>
+		</div>
+
+		  <div class="control-group">
+			<%= label_tag(:minuto, "Minuto de Nascimento") %>
+			<div class="controls">
+				<%= text_field_tag(:minuto) %>
+			</div>
+		</div>
+
+		  <div class="control-group">
+			<%= label_tag(:segundo, "Segundo de Nascimento") %>
+			<div class="controls">
+				<%= text_field_tag(:segundo) %>
+			</div>
+		</div>
+
+	<%= submit_tag("Calcular") %>
+<% end %>
+
+		
+
+	</div>
+</div>

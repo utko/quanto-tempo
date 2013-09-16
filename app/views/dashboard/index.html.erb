@@ -1,0 +1,41 @@
+<div class="row content">
+	<div class="span8 offset2">
+		<h1>Quanto Tempo Para</h1>
+
+<%= form_tag("/dashboard/tempo", method: "post") do %>
+ 
+			<div class="control-group">
+			<%= label_tag(:data, "Nome desta data") %>
+			<div class="controls">
+				<%= text_field_tag(:data) %>
+			</div>
+		</div>
+
+	  <div class="control-group">
+			<%= label_tag(:ano, "Ano") %>
+			<div class="controls">
+				<%= text_field_tag(:ano) %>
+			</div>
+		</div>
+
+		  <div class="control-group">
+			<%= label_tag(:mes, "mes") %>
+			<div class="controls">
+				<%= text_field_tag(:mes) %>
+			</div>
+		</div>
+
+		  <div class="control-group">
+			<%= label_tag(:dia, "Dia") %>
+			<div class="controls">
+				<%= text_field_tag(:dia) %>
+			</div>
+		</div>
+
+	<%= submit_tag("Calcular") %>
+<% end %>
+
+		
+
+	</div>
+</div>

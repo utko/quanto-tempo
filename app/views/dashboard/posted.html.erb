@@ -1,0 +1,15 @@
+<div class="row content">
+	<div class="span8 offset2">
+		<h1>Calculo do bilhão de segundos</h1>
+
+
+<% if @idade < 1000000000 %>
+<h4>Você completará 1 bilhão de segundos em: <%= @diado1bilhao.to_formatted_s(:long) %></h4>
+
+<% else %>
+<h4>Você completou 1 bilhão de segundos em: <%= @diado1bilhao.to_s %></h4>
+<% end %>		
+
+
+	</div>
+</div>
