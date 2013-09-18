@@ -1,14 +1,23 @@
 <div class="row content">
 	<div class="span8 offset2">
-		<h1>Quanto Tempo Para. 0.1</h1>
+		<center><h1>Quanto Tempo Para. - Versão 0.1</h1></center>
+		<center><h5>Hoje é: <%= distance_of_time_in_words_to_now(@hoje, :year) %></h5></center>
 
-
-<% if @dias >=1 %>
+<% if @diferencapersonal >= 1 %>
+<h4><%= distance_of_time_in_words_to_now(@personal, :year ) %></h4>
 <h4>Faltam: <%= @dias +1 %> dias para o/a <%= @data %>!</h4>
-<% else %>
-<h4>É Amanhã!!!!!!</h4>
-<% end %>		
 
+<% elsif @diferencapersonal >=-1 && @diferencapersonal <=1 %>
+<h4><%= distance_of_time_in_words_to_now(@personal, include_seconds: true) %></h4>
+<h4>O/a <%= @data %> é Hoje!!</h4>
 
+<% elsif @diferencapersonal >=0 && @diferencapersonal <=86399 %>
+<h4><%= distance_of_time_in_words_to_now(@personal, include_seconds: true) %></h4>
+<h4>O/a <%= @data %> é Hoje!!</h4>
+
+<% else %>		
+<h4>Já se passaram <%= @dias * -1 %> dias da/o <%= @data %>!</h4>
+
+<% end %>
 	</div>
 </div>

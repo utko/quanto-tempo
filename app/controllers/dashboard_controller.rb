@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
 	end
 
 	def tempo
-				hoje = Time.new
+				@hoje = Time.new
 
 
 		dia = params[:dia]
@@ -11,13 +11,14 @@ class DashboardController < ApplicationController
 		ano = params[:ano]
 		@data = params[:data]
 
-		personal = Time.mktime(ano,mes,dia)
-		diferencapersonal = personal - hoje
-		diassegundos = personal - hoje
-		@dias = diferencapersonal.to_i / 60 / 60 / 24
+		@personal = Time.mktime(ano,mes,dia,@hoje.hour,@hoje.min,@hoje.sec)
+		@diferencapersonal = @personal - @hoje
+		diassegundos = @personal - @hoje
+		@dias = @diferencapersonal.to_i / 60 / 60 / 24
 
 		if @dias >= 1
-			puts "Faltam #{@dias + 1} dias para o que você quer saber!#{@data}" 
+			puts "Exibir #{@diferencapersonal}"
+			puts "Faltam #{@dias + 1} dias para o que você quer saber!#{@data + @hoje.to_s}" 
 		else
 			puts "É Amanhã o que você quer saber!!!!!!"
 		end	
